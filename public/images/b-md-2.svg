@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg x="997.891pt" y="261.567pt" width="136.195pt" height="135.967pt" viewBox="997.891 261.567 136.195 135.967" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <title>Shape 64 Copy</title>
+    <g id="1">
+      <defs>
+        <path id="2" d="M1114.41,281.217 C1102.65,269.243,1084.32,264.691,1065.99,264.567 C1047.66,264.691,1029.33,269.243,1017.57,281.217 C1005.57,292.953,1001.02,311.251,1000.89,329.55 C1001.02,347.849,1005.58,366.149,1017.57,377.882 C1029.33,389.858,1047.66,394.409,1065.99,394.534 C1084.32,394.409,1102.65,389.858,1114.41,377.882 C1126.4,366.148,1130.96,347.849,1131.09,329.55 C1130.96,311.25,1126.4,292.951,1114.41,281.217"/>
+      </defs>
+      <use xlink:href="#2" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#1"/>
+  <defs>
+    <title>Path Copy</title>
+    <g id="3">
+      <defs>
+        <path id="4" d="M1113.49,377.107 C1113.49,377.107,1018.29,377.107,1018.29,377.107 C1018.29,377.107,1018.29,281.907,1018.29,281.907 C1018.29,281.907,1113.49,281.907,1113.49,281.907"/>
+      </defs>
+      <use xlink:href="#4" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#3"/>
+  <defs>
+    <title>Path Copy</title>
+    <g id="5">
+      <defs>
+        <path id="6" d="M1019.19,327.637 C1019.19,327.637,1124.46,360.736,1124.46,360.736"/>
+      </defs>
+      <use xlink:href="#6" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#5"/>
+  <defs>
+    <title>Path Copy</title>
+    <g id="7">
+      <defs>
+        <path id="8" d="M1018.42,326.887 C1018.42,326.887,1124.48,300.025,1124.48,300.025"/>
+      </defs>
+      <use xlink:href="#8" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#7"/>
+</svg>

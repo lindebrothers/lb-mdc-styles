@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg x="850.761pt" y="416.446pt" width="136.195pt" height="135.967pt" viewBox="850.761 416.446 136.195 135.967" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <title>Shape 64</title>
+    <g id="1">
+      <defs>
+        <path id="2" d="M967.276,436.096 C955.521,424.121,937.189,419.57,918.858,419.446 C900.526,419.57,882.196,424.122,870.441,436.096 C858.444,447.832,853.885,466.13,853.761,484.429 C853.885,502.728,858.445,521.028,870.441,532.761 C882.194,544.737,900.526,549.288,918.858,549.412 C937.189,549.288,955.52,544.737,967.276,532.761 C979.272,521.027,983.832,502.728,983.956,484.429 C983.832,466.129,979.272,447.83,967.276,436.096"/>
+      </defs>
+      <use xlink:href="#2" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#1"/>
+  <defs>
+    <title>Path</title>
+    <g id="3">
+      <defs>
+        <path id="4" d="M872.059,482.516 C872.059,482.516,979.844,508.736,979.844,508.736"/>
+      </defs>
+      <use xlink:href="#4" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#3"/>
+  <defs>
+    <title>Path</title>
+    <g id="5">
+      <defs>
+        <path id="6" d="M871.291,481.766 C871.291,481.766,978.662,458.431,978.662,458.431"/>
+      </defs>
+      <use xlink:href="#6" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#5"/>
+  <defs>
+    <title>Path</title>
+    <g id="7">
+      <defs>
+        <path id="8" d="M869.687,437.613 C869.687,437.613,979.685,458.975,979.685,458.975"/>
+      </defs>
+      <use xlink:href="#8" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#7"/>
+  <defs>
+    <title>Path</title>
+    <g id="9">
+      <defs>
+        <path id="10" d="M870.599,530.945 C870.599,530.945,979.463,509.574,979.463,509.574"/>
+      </defs>
+      <use xlink:href="#10" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#9"/>
+  <defs>
+    <title>Path</title>
+    <g id="11">
+      <defs>
+        <path id="12" d="M869.474,530.79 C869.474,530.79,869.474,437.116,869.474,437.116"/>
+      </defs>
+      <use xlink:href="#12" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#11"/>
+  <defs>
+    <title>Path</title>
+    <g id="13">
+      <defs>
+        <path id="14" d="M870.867,434.607 C870.867,434.607,965.977,434.607,965.977,434.607"/>
+      </defs>
+      <use xlink:href="#14" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#13"/>
+  <defs>
+    <title>Path</title>
+    <g id="15">
+      <defs>
+        <path id="16" d="M870.839,533.836 C870.839,533.836,966.228,533.836,966.228,533.836"/>
+      </defs>
+      <use xlink:href="#16" style="fill:none;opacity:1;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-width:6;"/>
+    </g>
+  </defs>
+  <use xlink:href="#15"/>
+</svg>
