@@ -1,0 +1,60 @@
+body.mdc {
+  font-family: $blocket-font-family;
+  font-size: 17px;
+  line-height: 26px;
+
+  p {
+    font-family: $blocket-font-family;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  h1, h2, h3, h4, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $blocket-color-black;
+    font-weight: 400;
+  }
+  h1, h2 {
+    font-family: $blocket-font-family-bold;
+  }
+  h3, h4, h5, h6 {
+    font-family: $blocket-font-family-medium;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+// ---------------------------------------------------
+@media (max-width: layout-grid.breakpoint-max(phone)) {
+  body.mdc {
+
+  }
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(tablet)) and (max-width: layout-grid.breakpoint-max(tablet)) {
+  body.mdc {
+
+  }
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(desktop)) {
+  body.mdc {
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+}
