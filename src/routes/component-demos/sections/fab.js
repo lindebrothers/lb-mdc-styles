@@ -16,7 +16,7 @@ export default (props) => {
   </div>
   <hr className="mdc-list-divider" />
   <div className="helper-flex-display helper-flex-row helper-flex-space-between" style={{height: 100}}>
-    <div className="mdc-touch-target-wrapper">
+    <div className="mdc-touch-target-wrapper" style={{color: 'green'}}>
       <button className="mdc-fab" aria-label="Favorite">
         <div className="mdc-fab__ripple"></div>
         <span className="mdc-fab__icon material-icons">favorite</span>

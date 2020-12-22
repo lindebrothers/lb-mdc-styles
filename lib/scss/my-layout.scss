@@ -16,11 +16,27 @@ pre {
 }
 
 .mdc-chip {
+  //mix-blend-mode: difference;
   color: white;
   @include chips.fill-color($mdc-theme-primary);
   i {
     color: white;
+    //mix-blend-mode: difference;
   }
+  mdc-chip__text {
+    //mix-blend-mode: difference;
+    color: white;
+  }
+}
+
+
+//@include icon-button.core-styles;
+//fab.ink-color(pink)
+//@include fab.core-styles;
+
+.mdc-fab {
+  @include fab.core-styles;
+  @include fab.ink-color(pink)
 }
 
 // ---------------------------------------------------

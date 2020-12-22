@@ -2,34 +2,35 @@ import React, {useEffect, useState} from 'react';
 import { withRouter } from "react-router";
 import Layout from '@src/layouts/content-layout'
 import Markdown from '@src/components/markdown-handler'
+import WithMarkdown from '@src/components/markdown-handler/with-markdown'
 import gettingStartedMD from './getting-started'
 import helperClasses from './helper-classes'
 import Concept from './concept'
-import themeAndColors from './theme-and-colors'
+import ThemeAndColorsComp from './theme-colors'
 import typography from './typography'
 
 
 const Comp = (props) => {
     const {location} = props
-    const [md, setMd] = useState(gettingStartedMD);
+    const [md, setMd] = useState(WithMarkdown(gettingStartedMD));
     const [pageStatus, setPageStatus] = useState('init');
 
 
     useEffect( () => {
       if (location.pathname === '/docs/getting-started') {
-        setMd(gettingStartedMD);
+        setMd(WithMarkdown(gettingStartedMD));
       }
       if (location.pathname === '/docs/helper-classes') {
-        setMd(helperClasses);
+        setMd(WithMarkdown(helperClasses));
       }
       if (location.pathname === '/docs/concept') {
-        setMd(Concept);
+        setMd(WithMarkdown(Concept));
       }
       if (location.pathname === '/docs/theme-and-colors') {
-        setMd(themeAndColors);
+        setMd(<ThemeAndColorsComp />);
       }
       if (location.pathname === '/docs/typography') {
-        setMd(typography);
+        setMd(WithMarkdown(typography));
       }
       setPageStatus('ready')
 
@@ -45,7 +46,7 @@ const Comp = (props) => {
     <Layout>
       <div className="mdc-layout-grid__inner">
         <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet">
-          <Markdown source={md} />
+          {md}
           { (location.pathname === '/docs/theme-and-typography' && (
             <div>
 
