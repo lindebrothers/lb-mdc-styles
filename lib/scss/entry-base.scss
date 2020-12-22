@@ -1,260 +1,140 @@
-$blocket-color-red: #ef404f;
-$blocket-color-blue: #4182c3;
-$blocket-color-green: #49b975;
-$blocket-color-yellow: #F27C00;
-$blocket-color-black: #363433;
-$blocket-color-white: #fff;
-$blocket-color-lightgray: #dfdede;
-$blocket-color-super-lightgray: #eeeeee;
-$blocket-color-gray: #9A9999;
-$blocket-font-family: 'BlocketSans-Regular';
-$blocket-font-family-medium: 'BlocketSans-Medium';
-$blocket-font-family-bold: 'BlocketSans-Bold';
+/* Build a Material theme */
+// To begin customizing your theme, modify these variables. By default each theme starts off with our baseline values, so you can easily swap them out.
 
+$lb-color-red: Tomato;
+$lb-color-blue: #03DAC6; // #4182c3;
+$lb-color-green: #49b975;
+$lb-color-yellow: #F27C00;
+$lb-color-black: #363433;
+$lb-color-white: #fff;
+$lb-color-lightgray: #dfdede;
+$lb-color-super-lightgray: #eeeeee;
+$lb-color-gray: #9A9999;
+
+$mdc-theme-primary: $lb-color-red;
+$mdc-theme-secondary: $lb-color-blue;
+
+
+
+
+/*  Typography */
+// To change your theme's typography, we recommend importing a font from Google Fonts and setting the global font-family https://fonts.google.com
+
+
+
+/* Shape */
+// The shapes of small, medium, and large components can be themed by overriding the default values. We recommend using our shape customization tool to help you pick your radius values. https://material.io/design/shape/about-shape.html#shape-customization-tool
+
+$mdc-shape-small-component-radius: 4px;
+$mdc-shape-medium-component-radius: 4px;
+$mdc-shape-large-component-radius: 0px;
+
+
+/* Color */
+// To change your theme's color scheme, replace the existing HEX color values with custom HEX color values. Use our color palette generator to help come up with pairings and check your color contrast. https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+
+// Primary colors ($mdc-theme-primary) map to components such as app bars and buttons, while secondary colors ($mdc-theme-secondary) are used as accents on components such as FABs and selection controls.
+
+
+
+
+
+
+// Theme background ($mdc-theme-background) appears behind scrollable content. Surface color ($mdc-theme-surface) is mapped to the surface of components such as cards, sheets, and menus. Error color ($mdc-theme-error) is used to indicate an error state for components such as text fields provided with inaccurate input.
+
+// $mdc-theme-surface: #ffffff;
+// $mdc-theme-background: #ffffff;
+// $mdc-theme-error: #b00020;
+
+
+// “On-” colors define how text, icons, and strokes are colored in relation to the surface on which they appear. If you are updating these manually, be sure to consider accessible color contrast for the value pairs.
+
+// $mdc-theme-on-primary: #ffffff;
+// $mdc-theme-on-secondary: #ffffff;
+// $mdc-theme-on-error: #ffffff;
+// $mdc-theme-on-surface: #000000;
+
+
+
+
+
+//@use "@material/theme/index";
 
 @use "@material/theme/index" as theme with (
-  $primary: $blocket-color-blue,
-  $secondary: $blocket-color-green,
-  $background: $blocket-color-white,
-  $error: $blocket-color-red,
+  $primary: $lb-color-red,
+  $secondary: #03DAC6,
+  //$background: $lb-color-white,
+  //$error: $lb-color-red,
 );
-//$mdc-typography-font-family: unquote("'BlocketSans-Regular', sans-serif");
-//@use "@material/typography/index" as typography with (
-//  $font-family: unquote("'BlocketSans-Regular', sans-serif"),
-//);
-
-
-$mdc-typography-font-family: unquote("Roboto, sans-serif");
-
-
-
-@use "@material/drawer/index" as drawer;
-@use "@material/theme/custom-properties" as custom-properties;
-@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/typography/mdc-typography" as mdc-typography;
 @use "@material/layout-grid/index" as layout-grid;
-@use "@material/list/index" as list;
-@use "@material/icon-button/index" as icon-button;
-@use "@material/button/index" as button;
-@use "@material/tab-bar/mdc-tab-bar" as tab-bar;
-@use "@material/tab-scroller/mdc-tab-scroller";
-@use "@material/tab-indicator/mdc-tab-indicator";
-@use "@material/tab/mdc-tab" as tab;
-@use "@material/fab/index" as fab;
-@use "@material/switch/index" as switch;
-//@use "@material/ripple/index" as ripple;
+@use "@material/chips/index" as chips;
 
-@use "@material/floating-label/mdc-floating-label";
-@use "@material/line-ripple/mdc-line-ripple";
-@use "@material/notched-outline/mdc-notched-outline";
-@use "@material/slider/slider" as slider;
-@use "@material/textfield/index" as textfield;
-@use "@material/chips/mdc-chips" as chips;
-@use "@material/checkbox/index" as checkbox;
-//@use "@material/radio/mdc-radio" as radio;
-@use "@material/form-field/index" as form-field;
-@use '@material/select/index' as select;
-@use "@material/select/styles" as select-styles;
-@use "@material/menu-surface/mdc-menu-surface" as mdc-menu-surface;
-@use "@material/menu/mdc-menu" as menu;
-@use "@material/snackbar/index" as snackbar;
-@use "@material/linear-progress/index" as linear-progress;
-@use "@material/image-list/index" as image-list;
-@use "@material/dialog/index" as dialog;
+// END HEAD ------------------------------------------------------------------
+
+// Import global Material Theming variables
+
+@include theme.core-styles;
+:root {
+  --lb-color-red: #ef404f;
+  --lb-color-blue: #4182c3;
+  --lb-color-green: #49b975;
+  --lb-color-yellow:  #F27C00;
+  --lb-color-black: #363433;
+  --lb-color-white:  #fff;
+  --lb-color-super-lightgray: #eeeeee;
+  --lb-color-lightgray: #DFDEDE;
+  --lb-color-gray: #9A9999;
+}
 
 
-@use "@material/top-app-bar/index" as top-app-bar;
-@use "@material/top-app-bar/mdc-top-app-bar";
-@use "@material/data-table/data-table" as data-table;
+@import "typography";
+
+//@import "@material/theme/color-palette";
+//@import "@material/theme/functions";
+//@import "@material/theme/mixins";
 
 
 
-@import "@material/typography/mdc-typography";
-@import "@material/ripple/mdc-ripple";
+// Import styles for each MDC Web component
+@import "@material/button/mdc-button";
 @import "@material/card/mdc-card";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/chips/mdc-chips";
+@import "@material/dialog/mdc-dialog";
+@import "@material/drawer/mdc-drawer";
+@import "@material/elevation/mdc-elevation";
+@import "@material/fab/mdc-fab";
+@import "@material/form-field/mdc-form-field";
+@import "@material/feature-targeting/feature-targeting";
+@import "@material/icon-button/mdc-icon-button";
 @import "@material/image-list/mdc-image-list";
-@import "@material/select/mdc-select";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/linear-progress/mdc-linear-progress";
+@import "@material/list/mdc-list";
+@import "@material/menu/mdc-menu";
+@import "@material/menu-surface/mdc-menu-surface";
 @import "@material/radio/mdc-radio";
+@import "@material/ripple/mdc-ripple";
+@import "@material/rtl/mixins";
+@import "@material/select/mdc-select";
+@import "@material/shape/shape";
+// @import "@material/shape/functions";
+@import "@material/slider/slider";
+@import "@material/snackbar/mdc-snackbar";
+@import "@material/switch/mdc-switch";
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/textfield/mdc-text-field";
+//@import "@material/textfield/helper-text/mdc-text-field-helper-text";
+
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/typography/mdc-typography";
 @import "@material/data-table/mdc-data-table";
 
-@include drawer.core-styles;
-@include drawer.dismissible-core-styles;
-@include drawer.modal-core-styles;
+
 @include theme.core-styles;
-@include list.core-styles;
-@include button.core-styles;
-@include fab.core-styles;
-@include icon-button.core-styles;
-@include textfield.core-styles;
 
-@include switch.core-styles;
-@include checkbox.core-styles;
-@include dialog.core-styles;
-@include form-field.core-styles;
-@include slider.core-styles;
-@include snackbar.core-styles;
-@include linear-progress.core-styles;
-
-@include data-table.core-styles;
-@include data-table.theme-baseline;
-
-.my-demo-select {
-  @include select.filled-density(-2);
-}
-.mdc-top-app-bar {
-  // fill-color($color) is defined in the top-app-bar namespace
-  @include top-app-bar.fill-color($blocket-color-red);
-}
-
-// TODO: font cannot be loaded within css because location will change
-
-//html {
-//  --mdc-typography-font-family: 'BlocketSans-Regular', sans-serif;
-//}
-
-:root {
-  //@include theme.property(color, custom-properties.create(--blocket-color-red, #ef404f));
-  --blocket-color-red: #ef404f;
-  --blocket-color-blue: #4182c3;
-  --blocket-color-green: #49b975;
-  --blocket-color-yellow:  #F27C00;
-  --blocket-color-black: #363433;
-  --blocket-color-white:  #fff;
-  --blocket-color-super-lightgray: #eeeeee;
-  --blocket-color-lightgray: #DFDEDE;
-  --blocket-color-gray: #9A9999;
-}
-
-@import "./typography";
-
-body.mdc {
-  margin: 0;
-  padding: 0;
-  background-color: rgb(249, 247, 246);
-
-  .site-content {
-    margin: 0 auto;
-    max-width: 980px;
-  }
-  .site-header {
-    background-color: var(--blocket-color-white);
-    border-bottom: solid 1px var(--blocket-color-gray);
-    max-height: 72px;
-
-    .mdc-tab-bar {
-      justify-content: flex-end;
-      display: flex;
-    }
-
-    .mdc-tab {
-      //width: 72px;
-      flex: 0;
-      .mdc-tab-indicator {
-        display: none;
-      }
-    }
-    .mdc-tab__text-label {
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: none;
-    }
-
-  }
-  .site-ingress {
-    background-color: var(--blocket-color-red);
-  }
-  .site-main {
-    //background-color: var(--blocket-color-blue);
-  }
-
-  pre {
-    background-color: var(--blocket-color-super-lightgray);
-    padding: 8px 8px;
-    margin: 8px 0px;
-  }
-
-  // Card settings
-  .mdc-card__primary {
-    padding: 0px 16px 0px 16px;
-  }
-  .mdc-card__secondary {
-    padding: 0px 16px 16px 16px;
-  }
-
-
-  // TODO: move to dev sass later
-  .component-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-  .component-section {
-
-  
-    .component-section:first-child {
-      //width: 200px;
-    }
-  }
-  
-  .component-section {
-    margin: 16px 0px 40px 0px;
-  
-    &.dialog-component-section {
-      margin-bottom: 60px; // To avoid overshadowing Image List
-    }
-  }
-
-  // TODO: END -------------------------
-
-
-}
-
-
-
-.mdc-image-list--masonry {
-  column-count: 5;
-  column-gap: 16px;
-
-  .mdc-image-list__item {
-    margin-bottom: 16px;
-  }
-}
-
-
-.colorbar-thin {
-  display: block;
-  height: 4px;
-  width: 100%;
-  content: '';
-  background-image: url(/__LIB_LOCATION__/images/color-bar-top.svg);
-  background-repeat: repeat-x;
-  background-size: auto;
-}
-.colorbar-thick {
-  display: block;
-  height: 13px;
-  width: 100%;
-  content: '';
-  background-image: url(/__LIB_LOCATION__/images/color-bar-top.svg);
-  background-repeat: repeat-x;
-  background-size: auto;
-}
-
-// ---------------------------------------------------
-@media (max-width: layout-grid.breakpoint-max(phone)) {
-
-}
-// ---------------------------------------------------
-@media (min-width: layout-grid.breakpoint-min(tablet)) and (max-width: layout-grid.breakpoint-max(tablet)) {
-
-}
-// ---------------------------------------------------
-@media (min-width: layout-grid.breakpoint-min(desktop)) {
-
-}
-
-
-
-
-
-
-
-
+@import "my-layout";

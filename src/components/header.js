@@ -26,8 +26,8 @@ const componentName = (props) => {
         <div className="mdc-layout-grid__inner">
           <section className="mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--align-middle">
           <Link component={CreateNavigation} to="/">
-            <img src="%BASE_URL%/webpack/%__LIB_VERSION__%/images/blocket-logo.svg" className="visible-in-desktop visible-in-tablet" width="120" height="26" />
-            <img src="%BASE_URL%/webpack/%__LIB_VERSION__%/images/blocket-symbol.svg" className="visible-in-phone" width="40" height="40" />
+            <img src="%BASE_URL%/images/lb-styles-small.png" className="visible-in-desktop visible-in-tablet" height="26" />
+            <img src="%BASE_URL%/images/lb-styles-small.png" className="visible-in-phone" height="26" />
           </Link>
           </section>
           <section className="mdc-layout-grid__cell--span-2 mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">

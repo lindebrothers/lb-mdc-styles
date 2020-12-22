@@ -26,7 +26,7 @@ export default {
     "whiteSpace": "pre",
     "wordSpacing": "normal",
     "wordBreak": "normal",
-    "fontSize": ".9em",
+    "fontSize": "1.0em",
     "lineHeight": "1.2em",
     "MozTabSize": "4",
     "OTabSize": "4",
@@ -39,7 +39,7 @@ export default {
     "margin": ".5em 0",
     "overflow": "auto",
     //"border": "1px solid #dddddd",
-    "backgroundColor": "var(--blocket-color-super-lightgray)"
+    "backgroundColor": "var(--lb-color-super-lightgray)"
   },
   "pre > code[class*=\"language-\"]": {
     "fontSize": "1em"

@@ -1,0 +1,24 @@
+
+@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/layout-grid/index" as layout-grid;
+
+// ---------------------------------------------------
+@media (max-width: layout-grid.breakpoint-max(phone)) {
+
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(tablet)) and (max-width: layout-grid.breakpoint-max(tablet)) {
+
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(desktop)) {
+
+}
+
+
+
+
+
+
+
+

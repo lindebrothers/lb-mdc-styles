@@ -1,0 +1,239 @@
+$lb-color-red: #ef404f;
+$lb-color-blue: #4182c3;
+$lb-color-green: #49b975;
+$lb-color-yellow: #F27C00;
+$lb-color-black: #363433;
+$lb-color-white: #fff;
+$lb-color-lightgray: #dfdede;
+$lb-color-super-lightgray: #eeeeee;
+$lb-color-gray: #9A9999;
+
+
+@use "@material/theme/index" as theme with (
+  $primary: $lb-color-blue,
+  $secondary: $lb-color-green,
+  $background: $lb-color-white,
+  $error: $lb-color-red,
+);
+
+
+$mdc-typography-font-family: unquote("Roboto, sans-serif");
+
+@use "@material/drawer/index" as drawer;
+@use "@material/theme/custom-properties" as custom-properties;
+@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/layout-grid/index" as layout-grid;
+@use "@material/list/index" as list;
+@use "@material/icon-button/index" as icon-button;
+@use "@material/button/index" as button;
+@use "@material/tab-bar/mdc-tab-bar" as tab-bar;
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab/mdc-tab" as tab;
+@use "@material/fab/index" as fab;
+@use "@material/switch/index" as switch;
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/slider/slider" as slider;
+@use "@material/textfield/index" as textfield;
+@use "@material/chips/mdc-chips" as chips;
+@use "@material/checkbox/index" as checkbox;
+@use "@material/form-field/index" as form-field;
+@use '@material/select/index' as select;
+@use "@material/select/styles" as select-styles;
+@use "@material/menu-surface/mdc-menu-surface" as mdc-menu-surface;
+@use "@material/menu/mdc-menu" as menu;
+@use "@material/snackbar/index" as snackbar;
+@use "@material/linear-progress/index" as linear-progress;
+@use "@material/image-list/index" as image-list;
+@use "@material/dialog/index" as dialog;
+
+
+@use "@material/top-app-bar/index" as top-app-bar;
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/data-table/data-table" as data-table;
+
+
+@import "./typography";
+
+@import "@material/ripple/mdc-ripple";
+@import "@material/card/mdc-card";
+@import "@material/image-list/mdc-image-list";
+@import "@material/select/mdc-select";
+@import "@material/radio/mdc-radio";
+@import "@material/data-table/mdc-data-table";
+
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include theme.core-styles;
+@include list.core-styles;
+@include button.core-styles;
+@include fab.core-styles;
+@include icon-button.core-styles;
+@include textfield.core-styles;
+
+@include switch.core-styles;
+@include checkbox.core-styles;
+@include dialog.core-styles;
+@include form-field.core-styles;
+@include slider.core-styles;
+@include snackbar.core-styles;
+@include linear-progress.core-styles;
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+
+.my-demo-select {
+  @include select.filled-density(-2);
+}
+.mdc-top-app-bar {
+  // fill-color($color) is defined in the top-app-bar namespace
+  @include top-app-bar.fill-color($lb-color-red);
+}
+
+
+:root {
+  --lb-color-red: #ef404f;
+  --lb-color-blue: #4182c3;
+  --lb-color-green: #49b975;
+  --lb-color-yellow:  #F27C00;
+  --lb-color-black: #363433;
+  --lb-color-white:  #fff;
+  --lb-color-super-lightgray: #eeeeee;
+  --lb-color-lightgray: #DFDEDE;
+  --lb-color-gray: #9A9999;
+}
+
+
+
+body.mdc {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(249, 247, 246);
+
+  .site-content {
+    margin: 0 auto;
+    max-width: 980px;
+  }
+  .site-header {
+    background-color: var(--lb-color-white);
+    border-bottom: solid 1px var(--lb-color-gray);
+    max-height: 72px;
+
+    .mdc-tab-bar {
+      justify-content: flex-end;
+      display: flex;
+    }
+
+    .mdc-tab {
+      //width: 72px;
+      flex: 0;
+      .mdc-tab-indicator {
+        display: none;
+      }
+    }
+    .mdc-tab__text-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: none;
+    }
+
+  }
+  .site-ingress {
+    background-color: var(--lb-color-red);
+  }
+  .site-main {
+    //background-color: var(--lb-color-blue);
+  }
+
+  pre {
+    background-color: var(--lb-color-super-lightgray);
+    padding: 8px 8px;
+    margin: 8px 0px;
+  }
+
+  // Card settings
+  .mdc-card__primary {
+    padding: 0px 16px 0px 16px;
+  }
+  .mdc-card__secondary {
+    padding: 0px 16px 16px 16px;
+  }
+
+
+  // TODO: move to dev sass later
+  .component-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .component-section {
+    .component-section:first-child {
+      //width: 200px;
+    }
+  }
+
+  .component-section {
+    margin: 16px 0px 40px 0px;
+    &.dialog-component-section {
+      margin-bottom: 60px; // To avoid overshadowing Image List
+    }
+  }
+
+  // TODO: END -------------------------
+
+
+}
+
+
+
+.mdc-image-list--masonry {
+  column-count: 5;
+  column-gap: 16px;
+
+  .mdc-image-list__item {
+    margin-bottom: 16px;
+  }
+}
+
+
+.colorbar-thin {
+  display: block;
+  height: 4px;
+  width: 100%;
+  content: '';
+  background-image: url(/__LIB_LOCATION__/images/color-bar-top.svg);
+  background-repeat: repeat-x;
+  background-size: auto;
+}
+.colorbar-thick {
+  display: block;
+  height: 13px;
+  width: 100%;
+  content: '';
+  background-image: url(/__LIB_LOCATION__/images/color-bar-top.svg);
+  background-repeat: repeat-x;
+  background-size: auto;
+}
+
+// ---------------------------------------------------
+@media (max-width: layout-grid.breakpoint-max(phone)) {
+
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(tablet)) and (max-width: layout-grid.breakpoint-max(tablet)) {
+
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(desktop)) {
+
+}
+
+
+
+
+
+
+
+

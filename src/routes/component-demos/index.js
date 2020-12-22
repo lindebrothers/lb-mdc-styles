@@ -30,7 +30,7 @@ const IndexPage = (props) => {
   return (
 
     <Layout>
-      <h1>The Material Components Web (MDC) UI</h1>
+      <h2>Demo of the components </h2>
       <hr className="mdc-list-divider" />
       <div className="mdc-layout-grid__inner">
         <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet">

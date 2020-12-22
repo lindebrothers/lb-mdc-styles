@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.site-content {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+pre {
+  background-color: var(--lb-color-super-lightgray);
+  padding: 8px 8px;
+  margin: 8px 0px;
+}
+
+.mdc-chip {
+  color: white;
+  @include chips.fill-color($mdc-theme-primary);
+  i {
+    color: white;
+  }
+}
+
+// ---------------------------------------------------
+@media (max-width: layout-grid.breakpoint-max(phone)) {
+
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(tablet)) and (max-width: layout-grid.breakpoint-max(tablet)) {
+
+}
+// ---------------------------------------------------
+@media (min-width: layout-grid.breakpoint-min(desktop)) {
+
+}

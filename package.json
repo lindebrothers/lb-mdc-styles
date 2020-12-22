@@ -1,6 +1,6 @@
 {
   "name": "lb-mdc-styles",
-  "version": "1.17.14",
+  "version": "0.0.1",
   "description": "MATERIAL COMPONENTS FOR THE WEB",
   "main": "index.js",
   "scripts": {

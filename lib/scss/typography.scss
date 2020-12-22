@@ -1,60 +1,110 @@
-body.mdc {
-  font-family: $blocket-font-family;
-  font-size: 17px;
-  line-height: 26px;
+@import "@material/typography/mdc-typography";
 
-  p {
-    font-family: $blocket-font-family;
-    font-size: 17px;
-    line-height: 26px;
-  }
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+$mdc-typography-font-family: unquote("Roboto, sans-serif");
 
-  h1, h2, h3, h4, h4, h5, h6 {
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    color: $blocket-color-black;
-    font-weight: 400;
-  }
-  h1, h2 {
-    font-family: $blocket-font-family-bold;
-  }
-  h3, h4, h5, h6 {
-    font-family: $blocket-font-family-medium;
-  }
 
-  h1 {
-    font-size: 28px;
-    line-height: 40px;
-  }
-  h2 {
-    font-size: 24px;
-    line-height: 28px;
-  }
-  h3 {
-    font-size: 22px;
-    line-height: 28px;
+
+$mdc-typography-font-family: unquote("Roboto, sans-serif");
+
+
+
+body {
+  //line-height: 1.1rem;
+}
+//p, .mdc-typography--body1 {
+//  font-size: 1.0rem;
+//  line-height: 1.38rem;
+//}
+
+h1, h2, h3, h4, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+
+a {
+  color: $mdc-theme-primary;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    outline: none;
   }
 }
+$mdc-typography--headline1: (
+  //font-size: 200px
+);
+
+
+h1 {
+  @include mdc-typography(headline1);
+}
+h2 {
+  @include mdc-typography(headline2);
+}
+h3 {
+  @include mdc-typography(headline3);
+}
+h4 {
+  @include mdc-typography(headline4);
+}
+h5 {
+  @include mdc-typography(headline5);
+}
+h6 {
+  @include mdc-typography(headline6);
+}
+.subtitle1 {
+  @include mdc-typography(subtitle1);
+}
+.subtitle2 {
+  @include mdc-typography(subtitle2);
+}
+body, p {
+  @include mdc-typography(body1);
+}
+/*
+.body2 {
+  @include mdc-typography(body2);
+}
+.caption {
+  @include mdc-typography(caption);
+}
+.button-text {
+  @include mdc-typography(button);
+}
+.overline-text {
+  @include mdc-typography(overline);
+}
+*/
 
 // ---------------------------------------------------
 @media (max-width: layout-grid.breakpoint-max(phone)) {
-  body.mdc {
-
+  h1 {
+    @include mdc-typography(headline1);
+    font-size: 76px;
+    line-height: 76px;
+  }
+  h2 {
+    @include mdc-typography(headline2);
+    font-size: 50px;
+    line-height: 50px;
+  }
+  h3 {
+    @include mdc-typography(headline3);
+    font-size: 40px;
+    line-height: 40px;
   }
 }
 // ---------------------------------------------------
 @media (min-width: layout-grid.breakpoint-min(tablet)) and (max-width: layout-grid.breakpoint-max(tablet)) {
-  body.mdc {
 
-  }
 }
 // ---------------------------------------------------
 @media (min-width: layout-grid.breakpoint-min(desktop)) {
-  body.mdc {
-    h1 {
-      font-size: 40px;
-      line-height: 48px;
-    }
-  }
+
 }

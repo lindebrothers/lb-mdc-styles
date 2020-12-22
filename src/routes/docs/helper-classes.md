@@ -1,4 +1,4 @@
-# Helper classes
+## Helper classes
 
 The library contains prepared CSS helper classes that will make life easier working with this branded MDC library. It is prepared css-classes with properties that will only affect wanted elements in a desired way.
 
