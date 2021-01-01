@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const combineSelectors = require('postcss-combine-duplicated-selectors');
 const CssnanoPlugin = require('cssnano-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 const pkt = require('./package.json')
 const fs = require('fs')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -66,148 +67,27 @@ function materialImporter(url, prev) {
 
 
 module.exports = [
-  // Base styles and all JS
   {
-  entry: ['./lib/scss/entry-base.scss', './lib/js/entry-base.js'],
-  output: {
-    filename: filenames.base.js,
-    path: path.resolve(__dirname, filenames.dir.name)
-  },
-  mode: process.env.NODE_ENV,
-  module: {
-    rules: [
-      {
-        test: /\.s[c]ss$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: filenames.base.css,
-            },
-          },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
-          { loader: 'postcss-loader' },
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass'),
-              webpackImporter: false,
-              sassOptions: {
-                includePaths: [
-                  'node_modules',
-                ],
-              },
-              importer: materialImporter
-            }
-          }
-        ]
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-          plugins: ['transform-object-assign']
-        }
-      }
-    ]
-  },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-            { from: 'lib/favicon', to: 'favicon' },
-            { from: 'lib/fonts', to: 'fonts' },
-            { from: 'lib/images', to: 'images' },
-      ]
-    }),
-    new ChangeStaticFileLocationWebpackPlugin(),
-    /*
-    new CssnanoPlugin({
-      cssnanoOptions: {
-        preset: ['advanced', {
-          discardComments: { removeAll: true }
-        }]
-      }
-    })
-    */
-  ],
-  },
-  // Helpers
-  {
-    entry: ['./lib/scss/entry-helpers.scss'],
+    entry: ['./lib/scss/entry-test.scss'],
     output: {
-      filename: filenames.helpers.js,
-      path: path.resolve(__dirname, filenames.dir.name)
+      filename: filenames.base.js,
+      path: path.resolve(__dirname, 'bakery')
     },
     mode: process.env.NODE_ENV,
     module: {
       rules: [
         {
-          test: /\.scss$/,
+          test: /\.scss$/i,
           use: [
+
             {
               loader: 'file-loader',
               options: {
-                name: filenames.helpers.css,
+                name: filenames.base.css,
               },
             },
             { loader: 'extract-loader' },
             { loader: 'css-loader' },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: () => [autoprefixer()],
-                }
-              },
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                implementation: require('sass'),
-                webpackImporter: false,
-                sassOptions: {
-                  includePaths: [
-                    'node_modules',
-                  ],
-                },
-                importer: materialImporter
-              }
-            }
-          ]
-        },
-      ]
-    },
-  },
-  {
-    entry: ['./lib/scss/entry-fonts.scss'],
-    output: {
-      filename: filenames.fonts.js,
-      path: path.resolve(__dirname, filenames.dir.name)
-    },
-    mode: process.env.NODE_ENV,
-    module: {
-      rules: [
-        {
-          test: /\.scss$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: filenames.fonts.css,
-              },
-            },
-            { loader: 'extract-loader' },
-            { loader: 'css-loader' },
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: () => [autoprefixer()],
-                }
-              },
-            },
             {
               loader: 'sass-loader',
               options: {
@@ -226,10 +106,49 @@ module.exports = [
       ]
     },
     plugins: [
-      new ChangeStaticFileLocationWebpackPlugin(),
-      //new CssMinimizerPlugin(),
-      new CssnanoPlugin(),
-    ]
+      new OptimizeCssAssetsPlugin({
+        //assetNameRegExp: /\.optimize\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorPluginOptions: {
+          preset: ['advanced', { discardComments: { removeAll: true } }],
+        },
+        canPrint: true
+      })
+    ],
+  },
+  {
+    entry: ['./bakery/base.css'],
+    output: {
+      filename: filenames.base.js,
+      path: path.resolve(__dirname, filenames.dir.name)
+    },
+    mode: process.env.NODE_ENV,
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: filenames.base.css,
+              },
+            },
+            { loader: 'extract-loader' },
+            { loader: 'css-loader' },
+          ]
+        },
+      ]
+    },
+    plugins: [
+      new OptimizeCssAssetsPlugin({
+        //assetNameRegExp: /\.optimize\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorPluginOptions: {
+          preset: ['advanced', { discardComments: { removeAll: true } }],
+        },
+        canPrint: true
+      })
+    ],
   }
-
 ];

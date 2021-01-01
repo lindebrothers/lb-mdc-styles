@@ -3,7 +3,6 @@ body {
   padding: 0;
 }
 
-
 .site-content {
   margin: 0 auto;
   max-width: 1024px;
@@ -32,13 +31,21 @@ pre {
 
 //@include icon-button.core-styles;
 //fab.ink-color(pink)
-//@include fab.core-styles;
+//@include fab.core-styles {
+//  color: green;
+//};
 
 .mdc-fab {
-  @include fab.core-styles;
+  //@include fab.core-styles;
   @include fab.ink-color(pink)
 }
+.mdc-fab {
+  //@include fab.core-styles;
+  @include fab.ink-color(orange);
+  font-weight: bold;
+}
 
+/*
 // ---------------------------------------------------
 @media (max-width: layout-grid.breakpoint-max(phone)) {
 
@@ -51,3 +58,4 @@ pre {
 @media (min-width: layout-grid.breakpoint-min(desktop)) {
 
 }
+*/

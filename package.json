@@ -4,7 +4,7 @@
   "description": "MATERIAL COMPONENTS FOR THE WEB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified, so therefor it passes\"",
+    "testcss": "postcss bakery/base.css > bakery/output.css",
     "clean": "echo \"Cleaning completed\" $([ -d ./dist ] && rm -rf ./dist $([ -d ./build ] && rm -rf ./build $([ -d ./public/webpack ] && rm -rf ./public/webpack)))",
     "start:snowpack": "NODE_ENV=development snowpack dev --polyfill-node",
     "start:webpack": "npm run compile:dev:watch",
@@ -37,11 +37,25 @@
     "copy-webpack-plugin": "6.3.0",
     "css-loader": "1.0.0",
     "css-minimizer-webpack-plugin": "^1.1.5",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
     "express": "^4.17.1",
     "extract-loader": "3.0.0",
     "file-loader": "2.0.0",
+    "mini-css-extract-plugin": "^1.3.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
     "postcss-combine-duplicated-selectors": "10.0.2",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-emptymediaqueries": "0.0.2",
+    "postcss-grouper": "0.0.5",
+    "postcss-import-url": "^6.0.0",
     "postcss-loader": "4.0.4",
+    "postcss-merge-rules": "^4.0.3",
+    "postcss-merge-selectors": "0.0.6",
+    "postcss-mqwidth-to-class": "^0.3.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-route": "1.0.3",
@@ -61,13 +75,16 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "@lindebros/awesome-api-client": "^1.0.0",
     "@material/button": "8.0.0",
     "@material/icon-button": "8.0.0",
     "@material/ripple": "8.0.0",
     "@material/theme": "8.0.0",
     "@material/typography": "8.0.0",
+    "cross-fetch": "^3.0.6",
+    "cssnano-webpack-plugin": "^1.0.3",
     "material-components-web": "8.0.0",
-    "react-syntax-highlighter": "^15.3.1",
-    "react-markdown": "^5.0.3"
+    "react-markdown": "^5.0.3",
+    "react-syntax-highlighter": "^15.3.1"
   }
 }
